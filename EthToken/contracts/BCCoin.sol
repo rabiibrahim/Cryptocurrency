@@ -70,9 +70,8 @@ contract BCCoin is Interface {
 
 
     function getEthers(uint tokVal) public payable{
-        uint ethVal = tokVal*tokenValue;
         balances[Owner] += tokVal;
         balances[msg.sender] -= tokVal;
-        msg.sender.transfer(ethVal);
+        msg.sender.transfer(tokVal*tokenValue);
     }
 }
