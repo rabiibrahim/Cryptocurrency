@@ -9,12 +9,15 @@ class App extends Component {
     value: '',
     message: '',
     address: '',
-    addressFrom: ''
+    addressFrom: '',
+    testObj: {}
   };
+  
   componentDidMount() {
-    const owner =  "FILL_ME_IN";        // change this line with your current address;
-    
-    this.setState({ owner });
+//    console.log(token);
+    const owner =  token._address;        // change this line with your current address;
+    const testObj = token.options.jsonInterface[0];
+    this.setState({ owner, testObj});
   }
 
   getTokens = async event => {
@@ -68,6 +71,8 @@ console.log(result)
         <h2>My Currency</h2>
         <p>
           This token is owned by {this.state.owner}.
+          This token is owned by {this.state.testObj}.
+
         </p>
         <hr />
         <form onSubmit={this.getTokens}>
