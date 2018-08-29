@@ -1,7 +1,6 @@
 import web3 from './web3';
-//import Compiled from '../../EthToken/compile';
 
-const address = '0x95CDE1b554D17DD70F5d4E33535100AdA0312792';
+const address = '0xeab6192eC0226556777915D8d2FFa0A599619A47';
 
  const abi =[
 	{
