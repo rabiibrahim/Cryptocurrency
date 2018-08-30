@@ -90,7 +90,7 @@ class App extends Component {
     const accounts = await web3.eth.getAccounts();  // your code here;
     this.setState({ message: 'Waiting on transaction success...' });
     await token.methods.getEthers(this.state.value).send({
-      gas: '1000000',
+      from: accounts[0],
     })// your code here;
       this.setState({ message: 'You sold your tokens!' });
   };
@@ -188,7 +188,7 @@ class App extends Component {
           <button>Set allowance!</button>
         </form>
         <hr />
-        <form getEthers={this.getEthers}>
+        <form onSubmit={this.getEthers}>
           <h4>Sell Tokens</h4>
           <div>
             <label>Amount of tokens to sell</label>
